@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ChatWithPDF by nsheth</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .hero-section {
+            background: var(--background-color);
+            color: var(--text-color);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-buttons .btn {
+            margin: 0 10px 10px;
+            min-width: 200px;
+        }
+
+
+
+        .pulse-btn {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 80px 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .cta-buttons .btn {
+                min-width: 180px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+
+            .hero-content h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero-content p {
+                font-size: 0.9rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons .btn {
+                margin: 0 0 15px;
+                min-width: 200px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <i class="fas fa-file-pdf mr-2"></i>
+                <span class="font-weight-bold">ChatWithPDF by nsheth</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="https://github.com/nityam2007/chatwithpdf"
+                            target="_blank">GitHub</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="/login">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero-section text-center">
+        <div class="container hero-content">
+            <h1 class="display-4 mb-4 font-weight-bold gradient-text">Welcome to ChatWithPDF</h1>
+            <p class="lead mb-5">Open-source AI-powered PDF Chat Bot for Instant Document Analysis</p>
+            <div class="cta-buttons">
+                <a href="#features" class="btn btn-outline-light btn-lg mb-3 pulse-btn">Explore Features</a>
+                <a href="/login" class="btn btn-light btn-lg mb-3 pulse-btn">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+
+
+    <section id="features" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 gradient-text">Why Choose ChatWithPDF?</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-brain feature-icon"></i>
+                        <h5>Advanced AI Models</h5>
+                        <p>Leverage cutting-edge AI models for document analysis.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-file-pdf feature-icon"></i>
+                        <h5>PDF Chat</h5>
+                        <p>Upload PDFs and chat with AI about their contents.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-code-branch feature-icon"></i>
+                        <h5>Open Source</h5>
+                        <p>Contribute, customize, and deploy your own instance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 gradient-text">How It Works</h2>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 text-center mb-4">
+                    <div class="step-card">
+                        <i class="fas fa-upload fa-3x mb-3 gradient-text"></i>
+                        <h4>1. Upload PDF</h4>
+                        <p>Upload your document to our secure platform.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 text-center mb-4">
+                    <div class="step-card">
+                        <i class="fas fa-robot fa-3x mb-3 gradient-text"></i>
+                        <h4>2. AI Processing</h4>
+                        <p>Our AI analyzes and understands your document.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 text-center mb-4">
+                    <div class="step-card">
+                        <i class="fas fa-comments fa-3x mb-3 gradient-text"></i>
+                        <h4>3. Start Chatting</h4>
+                        <p>Ask questions and get instant, intelligent responses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="use-cases" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 gradient-text">Who Can Benefit?</h2>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="benefit-card text-center">
+                        <i class="fas fa-user-graduate fa-3x mb-3 gradient-text"></i>
+                        <h4>Students</h4>
+                        <p>Get answers to questions from textbooks, research papers, and more.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="benefit-card text-center">
+                        <i class="fas fa-chalkboard-teacher fa-3x mb-3 gradient-text"></i>
+                        <h4>Educators</h4>
+                        <p>Create exam papers and lesson plans based on uploaded materials.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="benefit-card text-center">
+                        <i class="fas fa-briefcase fa-3x mb-3 gradient-text"></i>
+                        <h4>Professionals</h4>
+                        <p>Analyze documents, contracts with AI assistance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="ai-partners" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 gradient-text">AI Models Powered by Leading AI Companies</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-4">
+                    <div class="partner-card bg-primary">
+                        <img src="img/meta.png" alt="Meta" class="img-fluid partner-logo">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="partner-card bg-secondary">
+                        <img src="img/google.png" alt="Google" class="img-fluid partner-logo">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="partner-card bg-info">
+                        <img src="img/mistral.png" alt="Mixtral AI" class="img-fluid partner-logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="models" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 gradient-text">Available AI Models</h2>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="model-card">
+                        <h4 class="gradient-text">Meta</h4>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check-circle text-primary mr-2"></i>LLaMA 3 (8B)</li>
+                            <li><i class="fas fa-check-circle text-primary mr-2"></i>LLaMA 3 (70B)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="model-card">
+                        <h4 class="gradient-text">Mixtral AI</h4>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check-circle text-primary mr-2"></i>Mixtral 8x7B</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="model-card">
+                        <h4 class="gradient-text">Google</h4>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check-circle text-primary mr-2"></i>Gemma 7B</li>
+                            <li><i class="fas fa-check-circle text-primary mr-2"></i>Gemma2 9B</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech-stack" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 gradient-text">Our Technology Stack</h2>
+            <div class="row justify-content-center">
+                <div class="col-6 col-sm-4 col-md-2 text-center mb-4">
+                    <div class="tech-card">
+                        <i class="fab fa-python tech-stack-icon"="Python"></i>
+                        <p class="mt-2">Python</p>
+                    </div>
+                </div>
+
+                <div class="col-6 col-sm-4 col-md-2 text-center mb-4">
+                    <div class="tech-card">
+                        <i class="fas fa-stream tech-stack-icon" title="Streamlit"></i>
+                        <p class="mt-2">Streamlit</p>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 text-center mb-4">
+                    <div class="tech-card">
+                        <i class="fas fa-database tech-stack-icon" title="MySQL"></i>
+                        <p class="mt-2">MySQL</p>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 text-center mb-4">
+                    <div class="tech-card">
+                        <i class="fas fa-brain tech-stack-icon" title="Scikit-learn"></i>
+                        <p class="mt-2">Scikit-learn</p>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 text-center mb-4">
+                    <div class="tech-card">
+                        <i class="fas fa-bolt tech-stack-icon" title="Fast API"></i>
+                        <p class="mt-2">Fast API</p>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 text-center mb-4">
+                    <div class="tech-card">
+                        <i class="fas fa-rocket tech-stack-icon" title="Groq"></i>
+                        <p class="mt-2">Groq</p>
+                    </div>
+                </div>
+                <!-- Add more tech stack items here -->
+            </div>
+        </div>
+    </section>
+
+    <section id="cta" class="cta-section py-5 text-center text-white">
+        <div class="container cta-content">
+            <h2 class="mb-4 gradient-text">Ready to Experience the Power of AI?</h2>
+            <div class="cta-buttons">
+                <a href="/login" class="btn btn-light btn-lg mr-3 mb-3 pulse-btn">Get Started</a>
+                <a href="https://github.com/nityam2007/chatwithpdf" class="btn btn-outline-light btn-lg mb-3"
+                    target="_blank">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4 gradient-text">About ChatWithPDF</h5>
+                    <p class="mb-3">An open-source project empowering users with AI technology for document analysis and
+                        intelligent conversations.</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/nityam2007/chatwithpdf" target="_blank" aria-label="GitHub"><i
+                                class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4 gradient-text">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="/" class="text-light text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#features" class="text-light text-decoration-none">Features</a></li>
+                        <li class="mb-2"><a href="https://github.com/nityam2007/chatwithpdf"
+                                class="text-light text-decoration-none" target="_blank">GitHub</a></li>
+                        <li class="mb-2"><a href="/login" class="text-light text-decoration-none">Login</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-uppercase mb-4 gradient-text">Contact Us</h5>
+                    <p class="mb-2"><i class="fas fa-envelope mr-3"></i> support@nsheth.in</p>
+                    <p class="mb-2"><i class="fas fa-code-branch mr-3"></i> Contribute on GitHub</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4 pt-3 border-top border-secondary">
+            <p class="mb-0">&copy; 2024 ChatWithPDF by nsheth. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

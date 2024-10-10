@@ -24,7 +24,7 @@ ChatWithPDF is an advanced Streamlit application that enables users to engage in
 
 ```
 
-git clone https://github.com/yourusername/chatwithpdf.git
+git clone https://github.com/nityam2007/chatwithpdf.git
 cd chatwithpdf
 
 ```
